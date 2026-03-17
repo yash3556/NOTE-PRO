@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/svg+xml' href='favicon.svg'>
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Profile page</title>
+</head>
+<body class="profile-page">
+    <div class="main profile-shell">
+        <aside class="nav profile-nav">
+            <div class="profile-nav-brand">
+                <h2 id="logo">NOTE$PRO</h2>
+                <p>Personal dashboard</p>
+            </div>
+
+            <button id="User" class="profile-back-btn" type="button">
+                <i class="fa fa-arrow-left"></i> Back To Notes
+            </button>
+
+            <div class="profile-nav-tip">
+                <i class="fa fa-lock"></i>
+                <p>Your account data is stored locally for this browser profile.</p>
+            </div>
+        </aside>
+
+        <section class="profile-note">
+            <header class="profile-hero">
+                <h1>Account Hub</h1>
+                <p>Manage personal details, note statistics, and account controls in one place.</p>
+            </header>
+
+            <div class="profile-panels">
+                <section class="myaccount profile-card">
+                    <div class="account-head">
+                        <img src="user.png" id="img" alt="Avatar" class="avatar">
+                        <div class="account-head-copy">
+                            <h3>My Account</h3>
+                            <p>Keep your profile details updated so your workspace stays personalized.</p>
+                        </div>
+                    </div>
+
+                    <div class="user-card">
+                        <label class="field-block" for="name">
+                            <span>Name</span>
+                            <input type="text" name="name" id="name" disabled>
+                        </label>
+
+                        <label class="field-block" for="email">
+                            <span>Email</span>
+                            <input type="email" name="email" id="email" disabled>
+                        </label>
+
+                        <label class="field-block" for="password">
+                            <span>Password</span>
+                            <input type="password" name="password" id="password" disabled>
+                        </label>
+
+                        <label class="field-block field-bio" for="bio">
+                            <span>Bio</span>
+                            <textarea id="bio" disabled></textarea>
+                        </label>
+
+                        <label class="field-block" for="joinedDate">
+                            <span>Joined Date and Time</span>
+                            <input type="text" name="joinedDate" id="joinedDate" disabled>
+                        </label>
+
+                        <label class="field-block" for="lastLogin">
+                            <span>Last Login Date and Time</span>
+                            <input type="text" name="lastLogin" id="lastLogin" disabled>
+                        </label>
+                    </div>
+
+                    <div class="account-edit-row">
+                        <input type="file" id="userImage" class="hide" accept="image/*" disabled>
+                        <button id="edit">Edit Profile</button>
+                    </div>
+                </section>
+
+                <section class="StatisticsDashboard profile-card">
+                    <h3>Statistics Dashboard</h3>
+                    <div class="main-grid">
+                        <div class="totalNotes">
+                            <i id="icon" class="fa fa-file"></i>
+                            <p id="totalNotes">0</p>
+                            <span>Total Notes</span>
+                        </div>
+
+                        <div class="totalPin">
+                            <i id="icon" class="fa fa-thumb-tack"></i>
+                            <p id="totalPin">0</p>
+                            <span>Pinned Notes</span>
+                        </div>
+
+                        <div class="totalTrash">
+                            <i id="icon" class="fa fa-trash"></i>
+                            <p id="totalTrash">0</p>
+                            <span>Trash Notes</span>
+                        </div>
+
+                        <div class="lastEdit">
+                            <i id="icon" class="fa fa-clock-o"></i>
+                            <p id="lastEdit"></p>
+                            <span>Last Edited</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="accountControls profile-card">
+                <h2>Account Controls</h2>
+
+                <div class="ProfileAction">
+                    <h3>Profile Action</h3>
+                    <button id="EditProfile">Edit Profile</button>
+                    <button id="changePassword">Change Password</button>
+                    <button id="logout">Logout</button>
+                </div>
+
+                <div class="dataManagement">
+                    <h3>Data Management</h3>
+                    <div id="exportList"></div>
+                    <div id="userExport" class="hide"></div>
+
+                    <button onclick="exportNotesPDF()" id="export">Export Notes</button>
+                    <button id="import">Import Notes</button>
+                    <input type="file" id="importFile" accept=".json,.txt,.md,.pdf" class="hide">
+
+                    <button id="remove">Clear Trash</button>
+                    <button id="resetData">Reset Data</button>
+                </div>
+
+                <div class="dangerZone">
+                    <h3>Danger Zone</h3>
+                    <button id="deleteAccount">Delete Account</button>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="notes.js"></script>
+</body>
+</html>
+
+

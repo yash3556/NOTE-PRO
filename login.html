@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/svg+xml' href='favicon.svg'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>login page</title>
+</head>
+<body class="auth-page auth-login">
+    <main class="auth-layout">
+        <section class="auth-hero">
+            <div class="auth-brand">NOTE$PRO</div>
+            <h1>Welcome back</h1>
+            <p>Log in to continue writing, organizing, and revising your notes with a cleaner workflow.</p>
+            <ul>
+                <li><i class="fa fa-check-circle"></i> Access all your saved notes</li>
+                <li><i class="fa fa-check-circle"></i> Continue from your last session</li>
+                <li><i class="fa fa-check-circle"></i> Use AI study features instantly</li>
+            </ul>
+        </section>
+
+        <section class="auth-card">
+            <h2>Login</h2>
+            <p>Enter your account details to access your workspace.</p>
+
+            <form class="auth-form">
+                <label for="mail">Email</label>
+                <input type="email" name="email" id="mail" placeholder="abc@gmail.com">
+
+                <label for="pass">Password</label>
+                <input type="password" name="password" id="pass" placeholder="Password">
+
+                <div class="auth-actions auth-actions-single">
+                    <button id="sub-btn" type="button">Login</button>
+                </div>
+            </form>
+
+            <a class="auth-switch" href="index.html">
+                New user? Create an account
+            </a>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

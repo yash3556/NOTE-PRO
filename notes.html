@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/svg+xml' href='favicon.svg'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="notes.css">
+    <title>Notes App home </title>
+</head>
+<body class="notes-home">
+    <div class="main">
+        <div class="nav">
+            <ul>
+                <h2 id="logo">NOTE$PRO</h2>
+                <div class="search-tab">
+                <input type="search" id="search" name="search" placeholder="Search by exact title">
+                <button id="searchs"><i class="fa fa-search"></i></button>
+                </div>
+                <li id="allNotes"><i class="fa fa-list"></i> All Notes 
+                    <ul id="ulnotes" class="hide">
+                  
+                  </ul>
+                
+                </li>
+                <li id="newNotes"> <i class="fa fa-plus-circle"></i>  New Note</li>
+                <li id="pinned"><i class="fa fa-thumb-tack"></i>  Pinned
+                <ul id="ulpinned" class="hide"></ul>
+                </li>
+                <li id="Trash"><i class="fa fa-trash"></i> Trash
+                    <ul id="ultrash" class="hide">
+                        
+                    </ul>
+                </li>
+                <li id="Categories"><i class="fa fa-tags"></i> Categories 
+                    <select id="categoryFilter" class="hide">
+                         
+                        <option value="work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Ideas">Ideas</option>
+                    </select></li>
+                <li id="Settings"><i class="fa fa-cog"></i> Settings</li>
+                <li id="Profile"><i class="fa fa-user"></i> Profile</li>
+            </ul>
+        </div>
+         <div class="notes">
+            <h1 id="lab"><label for="title" id="title-head">Note Title</label></h1>
+            <p class="notes-subtitle">Capture your ideas clearly, then save, pin, or enhance with AI.</p>
+             
+            <input type="text" name="title" id="title" placeholder="Enter note title">
+           
+            <h2 id="tools">Editor Tools</h2> 
+             <br>
+            <div class="editor">
+            <button id="pin"><i class="fa fa-thumb-tack"></i> Pin</button>
+            <button id="save"><i class="fa fa-save"></i> Save</button>
+            <button id="Delete"><i class="fa fa-trash"></i> Delete</button>
+            <button onclick="openAIAssistant()" id="ai"><i class="fa fa-android"></i> AI</button>
+            <button id="toggle"><i class="fa fa-adjust"></i> Theme</button>
+            </div>
+             
+            <textarea id="textarea" placeholder="Write your notes here..."></textarea>
+            <div id="wordCount" class="word-count hide">0 words</div>
+            <hr>
+            <div id="notesContainer" class="hide" aria-live="polite"></div>
+         </div>
+       
+       
+       <div id="settingsOverlay" class="settings-overlay hide">
+         <div class="settings-panel">
+           <div class="settings-header">
+             <h2 class="settings-title">Settings</h2>
+             <button id="closeSettings" class="settings-close" type="button" aria-label="Close settings" onclick="closeSettingsPanel()">✕</button>
+           </div>
+
+           
+           <section class="settings-group">
+             <h3>Appearance</h3>
+             <div class="settings-option">
+               <span>Theme</span>
+               <div class="settings-option-controls">
+                 <label><input type="radio" name="theme-mode" id="themeLight" value="light"> Light</label>
+                 <label><input type="radio" name="theme-mode" id="themeDark" value="dark"> Dark</label>
+               </div>
+             </div>
+
+             <div class="settings-option">
+               <span>Font Size</span>
+               <select id="fontSizeSelect">
+                 <option value="small">Small</option>
+                 <option value="medium">Medium</option>
+                 <option value="large">Large</option>
+               </select>
+             </div>
+
+             <div class="settings-option">
+               <span>Accent Color</span>
+               <div class="accent-swatches" id="accentSelect">
+                 <button data-accent="blue" class="accent-swatch accent-blue"></button>
+                 <button data-accent="purple" class="accent-swatch accent-purple"></button>
+                 <button data-accent="teal" class="accent-swatch accent-teal"></button>
+               </div>
+             </div>
+           </section>
+
+           
+           <section class="settings-group">
+             <h3>Editor Preferences</h3>
+
+             <div class="settings-option">
+               <span>Default Category</span>
+               <select id="defaultCategorySelect">
+                 <option value="work">Work</option>
+                 <option value="Personal">Personal</option>
+                 <option value="Ideas">Ideas</option>
+               </select>
+             </div>
+
+             <div class="settings-option">
+               <label>
+                 <input type="checkbox" id="autoSaveToggle">
+                 Auto Save Notes
+               </label>
+             </div>
+
+             <div class="settings-option">
+               <label>
+                 <input type="checkbox" id="showWordCountToggle">
+                 Show Word Count
+               </label>
+             </div>
+           </section>
+
+           
+           <section class="settings-group">
+             <h3>Notes View</h3>
+
+             <div class="settings-option">
+               <span>Sort Notes</span>
+               <select id="sortOrderSelect">
+                 <option value="newest">Newest First</option>
+                 <option value="oldest">Oldest First</option>
+               </select>
+             </div>
+
+             <div class="settings-option">
+               <span>Layout</span>
+               <div class="settings-option-controls">
+                 <label><input type="radio" name="notes-view" value="list" id="viewList"> List</label>
+                 <label><input type="radio" name="notes-view" value="grid" id="viewGrid"> Grid</label>
+               </div>
+             </div>
+
+             <div class="settings-option">
+               <label>
+                 <input type="checkbox" id="showPinnedFirstToggle" checked>
+                 Show Pinned First
+               </label>
+             </div>
+           </section>
+         </div>
+       </div>
+       
+<div id="aiModal" class="ai-modal">
+
+  <div class="ai-box" role="dialog" aria-label="AI Study Assistant">
+
+    
+    <div class="ai-header">
+      <div class="ai-header-main">
+        <h3><i class="fa fa-android"></i> AI Study Assistant</h3>
+        <p><span class="ai-status-dot"></span> Ready to help with your notes</p>
+      </div>
+      <button class="ai-close-btn" type="button" onclick="closeAIAssistant()" aria-label="Close AI panel">&times;</button>
+    </div>
+
+    <div class="ai-history-tools">
+      <button id="copyLastAI" class="ai-tool-btn" type="button">Copy Last Reply</button>
+      <button id="clearAIHistory" class="ai-tool-btn ai-tool-danger" type="button">Clear History</button>
+    </div>
+
+    
+    <div id="aiChat" class="ai-chat"></div>
+
+    
+    <div class="ai-input-area">
+
+      <input
+        id="aiQuestion"
+        type="text"
+        placeholder="Ask AI to improve, summarize, explain, or create questions..."
+      >
+
+      <button class="ai-send-btn" type="button" onclick="sendToAI()"><i class="fa fa-paper-plane"></i> Send</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+       </div>
+    <script src="notes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
