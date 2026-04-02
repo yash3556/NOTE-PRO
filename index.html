@@ -3,52 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' type='image/svg+xml' href='favicon.svg'>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Notes app</title> 
+    <title>NotesPro | Smart Notes Workspace</title>
 </head>
-<body class="auth-page auth-signup">
-    <main class="auth-layout">
-        <section class="auth-hero">
-            <div class="auth-brand">NOTE$PRO</div>
-            <h1>Build smarter notes, faster</h1>
-            <p>Create your account to organize ideas, pin priorities, and use AI study help in one workspace.</p>
-            <ul>
-                <li><i class="fa fa-check-circle"></i> Fast note organization</li>
-                <li><i class="fa fa-check-circle"></i> Pin, trash, and recover notes</li>
-                <li><i class="fa fa-check-circle"></i> AI powered study support</li>
-            </ul>
+<body class="landing-page">
+    <header class="site-header">
+        <a class="site-brand" href="index.html" aria-label="NotesPro home">
+            <span class="site-brand__mark">NP</span>
+            <span class="site-brand__text">Note$Pro</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#workflow">Workflow</a>
+            <a href="#benefits">Benefits</a>
+        </nav>
+
+        <div class="site-actions">
+            <button class="ghost-button" type="button" data-auth-open="login">Login</button>
+            <button class="primary-button" type="button" data-auth-open="signup">Get Started Free</button>
+        </div>
+    </header>
+
+    <main class="landing-main">
+        <section class="hero-section" id="home">
+            <div class="hero-copy">
+                <span class="section-badge">All your ideas, notes, and AI - in one powerful workspace</span>
+                <h1>Think clearly. Write faster. Learn smarter.</h1>
+                <p>
+                    NotesPro helps you capture ideas instantly, organize them effortlessly, and enhance
+                    your learning with built-in AI. From quick notes to smart summaries, everything you
+                    need is in one place.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="primary-button large-button" type="button" data-auth-open="login">Login</button>
+                    <button class="secondary-button large-button" type="button" data-auth-open="signup">Get Started Free</button>
+                </div>
+
+                <div class="hero-stats-heading">
+                    <span class="section-badge">Features</span>
+                </div>
+
+                <div class="hero-stats">
+                    <article class="stat-card">
+                        <strong>Write Faster</strong>
+                        <span>Capture your thoughts instantly with a clean and distraction-free editor.</span>
+                    </article>
+                    <article class="stat-card">
+                        <strong>Stay Organized</strong>
+                        <span>Pin important notes, filter content, and manage everything effortlessly.</span>
+                    </article>
+                    <article class="stat-card">
+                        <strong>Study Smarter</strong>
+                        <span>Use AI to summarize notes, explain concepts, and generate questions.</span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <div class="visual-heading">
+                    <span class="section-badge">Dashboard Preview</span>
+                    <h2>Search notes instantly</h2>
+                    <p>Find what you need in seconds with smart search.</p>
+                </div>
+
+                <div class="workspace-preview">
+                    <div class="workspace-preview__chrome">
+                        <div class="workspace-dots" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="workspace-window-title">notespro / dashboard</span>
+                    </div>
+
+                    <div class="workspace-preview__top">
+                        <div class="workspace-top__left">
+                            <span class="workspace-pill">Dashboard Preview</span>
+                            <strong>NotesPro Workspace</strong>
+                        </div>
+                        <span class="workspace-search"><i class="fa fa-search"></i> Search notes instantly</span>
+                    </div>
+
+                    <div class="workspace-preview__body">
+                        <aside class="workspace-menu">
+                            <div class="workspace-menu__eyebrow">Categories</div>
+                            <span class="is-active"><i class="fa fa-sticky-note"></i> All Notes</span>
+                            <span><i class="fa fa-thumb-tack"></i> Pinned</span>
+                            <span><i class="fa fa-trash"></i> Trash</span>
+                            <span><i class="fa fa-briefcase"></i> Work</span>
+                            <span><i class="fa fa-graduation-cap"></i> Study</span>
+                        </aside>
+
+                        <div class="workspace-canvas">
+                            <div class="workspace-chip-row">
+                                <span>All Notes</span>
+                                <span>Pinned</span>
+                                <span>Trash</span>
+                                <span>Work</span>
+                                <span>Study</span>
+                            </div>
+
+                            <article class="preview-note preview-note--primary">
+                                <div class="preview-note__head">
+                                    <div>
+                                        <p class="preview-note__label">Today</p>
+                                        <h2>Product Meeting Notes</h2>
+                                    </div>
+                                    <span class="preview-status">AI Summary Ready</span>
+                                </div>
+                                <p>Finalize the release plan, review feedback, and generate a quick AI summary for the team.</p>
+                                <div class="preview-note__meta">
+                                    <span><i class="fa fa-clock-o"></i> Updated 2 min ago</span>
+                                    <span><i class="fa fa-lightbulb-o"></i> Team summary prepared</span>
+                                </div>
+                                <div class="preview-tags">
+                                    <span>Pinned</span>
+                                    <span>Work</span>
+                                </div>
+                            </article>
+
+                            <div class="preview-stack">
+                                <article class="preview-note preview-note--mini">
+                                    <p class="preview-note__label">Study Helper</p>
+                                    <h3>AI Prompt</h3>
+                                    <p>Turn this chapter into revision questions.</p>
+                                </article>
+
+                                <article class="preview-note preview-note--mini accent-note">
+                                    <p class="preview-note__label">Quick Capture</p>
+                                    <h3>Idea</h3>
+                                    <p>Save lecture points using voice-to-text and convert them into structured notes.</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="auth-card">
-            <h2>Create Account</h2>
-            <p>Sign up to start using your personal Notes dashboard.</p>
+        <section class="feature-section" id="features">
+            <div class="section-heading">
+                <span class="section-badge">Core Features</span>
+                <h2>Create, organize, and improve your notes from one focused workspace.</h2>
+            </div>
 
-            <form class="auth-form">
-                <label for="Name">Name</label>
-                <input type="text" name="name" id="Name" placeholder="Enter your name">
+            <div class="feature-strip">
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-pencil"></i></div>
+                    <h2>Simple Note Creation</h2>
+                    <p>Create and save notes quickly with a minimal and focused editor.</p>
+                </article>
 
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="abc@gmail.com">
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-thumb-tack"></i></div>
+                    <h2>Smart Organization</h2>
+                    <p>Organize notes with pins, categories, and flexible sorting options.</p>
+                </article>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Minimum 6 characters">
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa fa-android"></i></div>
+                    <h2>AI-Powered Assistance</h2>
+                    <p>Summarize content, simplify topics, and generate study material instantly.</p>
+                </article>
+            </div>
+        </section>
 
-                <div class="auth-actions">
-                    <button id="submit" type="button">Create Account</button>
-                    <button id="reset" type="button">Reset</button>
+        <section class="journey-section" id="workflow">
+            <div class="section-heading">
+                <span class="section-badge">How It Works</span>
+                <h2>Create, capture, and enhance your notes in three simple steps.</h2>
+            </div>
+
+            <div class="journey-grid">
+                <article class="journey-card">
+                    <span class="journey-step">01</span>
+                    <h3>Create your account</h3>
+                    <p>Sign up or log in within seconds using a simple popup.</p>
+                </article>
+
+                <article class="journey-card">
+                    <span class="journey-step">02</span>
+                    <h3>Capture &amp; organize</h3>
+                    <p>Write notes, pin priorities, and structure your ideas efficiently.</p>
+                </article>
+
+                <article class="journey-card">
+                    <span class="journey-step">03</span>
+                    <h3>Enhance with AI</h3>
+                    <p>Use AI tools to refine, summarize, or convert notes into study content.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="highlight-section" id="benefits">
+            <div class="highlight-panel">
+                <div class="highlight-copy">
+                    <span class="section-badge">Why NotesPro</span>
+                    <h2>NotesPro is more than just a notes app - it is a smarter way to work and study.</h2>
+                    <p>
+                        Understand the product before logging in and move into a clean, simple experience
+                        that works smoothly with your existing system.
+                    </p>
                 </div>
-            </form>
 
-            <a class="auth-switch" href="login.html">
-                Already have an account? Login
-            </a>
+                <ul class="highlight-list">
+                    <li><i class="fa fa-check-circle"></i> Understand the product before logging in</li>
+                    <li><i class="fa fa-check-circle"></i> Smooth popup-based login and signup flow</li>
+                    <li><i class="fa fa-check-circle"></i> Clean and simple user interface</li>
+                    <li><i class="fa fa-check-circle"></i> Works seamlessly with your existing system</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <span class="section-badge">Final Call To Action</span>
+            <h2>Start organizing your thoughts today</h2>
+            <p>Join NotesPro and turn your ideas into structured knowledge.</p>
+            <div class="cta-actions">
+                <button class="primary-button large-button" type="button" data-auth-open="login">Login</button>
+                <button class="secondary-button large-button" type="button" data-auth-open="signup">Create Free Account</button>
+            </div>
         </section>
     </main>
+
+    <div class="auth-modal" id="authModal" hidden aria-hidden="true">
+        <div class="auth-modal__backdrop" data-auth-close></div>
+
+        <div class="auth-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="authModalHeading">
+            <button class="auth-modal__close" type="button" data-auth-close aria-label="Close auth popup">&times;</button>
+
+            <div class="auth-modal__layout">
+                <section class="auth-modal__intro">
+                    <div class="auth-brand">NotesPro</div>
+                    <h2 id="authModalHeading">Access your notes from one beautiful workspace.</h2>
+                    <p>Login to continue writing and organizing, or sign up to create your NotesPro account.</p>
+
+                    <ul class="auth-benefits">
+                        <li><i class="fa fa-check-circle"></i> Save personal and work notes in one place</li>
+                        <li><i class="fa fa-check-circle"></i> Pin important notes and recover deleted ones</li>
+                        <li><i class="fa fa-check-circle"></i> Use the AI assistant for study and writing help</li>
+                    </ul>
+                </section>
+
+                <section class="auth-modal__forms">
+                    <div class="auth-view-switch" aria-label="Choose login or sign up">
+                        <button class="auth-view-switch__btn is-active" type="button" data-auth-view="login">Login</button>
+                        <button class="auth-view-switch__btn" type="button" data-auth-view="signup">Sign Up</button>
+                    </div>
+
+                    <section class="auth-pane is-active" data-auth-panel="login">
+                        <h3>Login</h3>
+                        <p>Enter your details and continue to your notes workspace.</p>
+
+                        <form class="auth-form">
+                            <label for="mail">Email</label>
+                            <input type="email" name="email" id="mail" placeholder="abc@gmail.com" autocomplete="email">
+
+                            <label for="pass">Password</label>
+                            <input type="password" name="password" id="pass" placeholder="Password" autocomplete="current-password">
+
+                            <div class="auth-actions auth-actions-single">
+                                <button id="sub-btn" type="button">Login</button>
+                            </div>
+                        </form>
+
+                        <p class="auth-inline-text">
+                            New here?
+                            <button class="auth-inline-link" type="button" data-auth-view="signup">Create an account</button>
+                        </p>
+                    </section>
+
+                    <section class="auth-pane" data-auth-panel="signup">
+                        <h3>Create Account</h3>
+                        <p>Sign up to start using your personal NotesPro dashboard.</p>
+
+                        <form class="auth-form">
+                            <label for="Name">Name</label>
+                            <input type="text" name="name" id="Name" placeholder="Enter your name" autocomplete="name">
+
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="abc@gmail.com" autocomplete="email">
+
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Minimum 6 characters" autocomplete="new-password">
+
+                            <div class="auth-actions">
+                                <button id="submit" type="button">Create Account</button>
+                                <button id="reset" type="button">Reset</button>
+                            </div>
+                        </form>
+
+                        <p class="auth-inline-text">
+                            Already have an account?
+                            <button class="auth-inline-link" type="button" data-auth-view="login">Login</button>
+                        </p>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
