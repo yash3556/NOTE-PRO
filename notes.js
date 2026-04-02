@@ -1,3 +1,4 @@
+const AUTH_ENTRY_URL = "index.html?auth=login";
 const AI_API_ENDPOINT = "/api/gemini";
 const LOCAL_GEMINI_KEY_STORAGE = "gemini_api_key";
 const GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
@@ -11,15 +12,22 @@ const GEMINI_MODEL_CANDIDATES = [
 let cachedGeminiModel = null;
 let currentEmail = localStorage.getItem("currentUser");
 
-if(!currentEmail){
-    window.location.href = "login.html";
-}
-
 let users = JSON.parse(localStorage.getItem("users")) || [];
-let currentUser = users.find(u => u.email === currentEmail);
+let currentUser = currentEmail ? users.find(u => u.email === currentEmail) : null;
 
-if(!currentUser){
-    window.location.href = "login.html";
+if(!currentEmail || !currentUser){
+    window.location.replace(AUTH_ENTRY_URL);
+    currentUser = {
+        name: "",
+        email: "",
+        password: "",
+        bio: "",
+        joinedDate: "",
+        lastLogin: "",
+        avatar: "",
+        notes: [],
+        settings: {}
+    };
 }
 
 let notes = currentUser.notes || [];
@@ -1372,7 +1380,7 @@ if(logout){
         localStorage.removeItem("currentUser");
         showAppToast("Logged out.", "info");
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = AUTH_ENTRY_URL;
         }, 350);
         
 });
@@ -2015,4 +2023,3 @@ function renderNotes(){
 if(ulnotes && ulpinned && ultrash){
     renderNotes();
 }
-
